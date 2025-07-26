@@ -33,6 +33,8 @@ I'm Aryan Kumar Dwivedi, an aspiring **Data Scientist & AI Enthusiast**, pursuin
 **Current CGPA**: 9.00  
 **12th Grade**: 86.2% (Kendriya Vidyalaya)
 
+
+
 ---
 
 ## 📊 Projects Highlighted
