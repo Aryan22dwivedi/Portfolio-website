@@ -5,11 +5,14 @@ This is my portfolio website contains some of my projects
 
 This is the source code for my personal portfolio website, built using **HTML**, **Tailwind CSS**, and a touch of JavaScript. It highlights my skills, education, projects, and contact information.
 
-## 🔗 Live Demo
-
-You can explore the portfolio [here](https://aryan22dwivedi.github.io)
 
 ---
+
+## 🔗 View Live
+
+👉 [**View Website**](https://aryan22dwivedi.github.io/Portfolio-website/index.html)
+
+
 
 ## 📌 Features
 
