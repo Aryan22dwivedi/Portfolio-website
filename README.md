@@ -66,7 +66,7 @@ I'm Aryan Kumar Dwivedi, an aspiring **Data Scientist & AI Enthusiast**, pursuin
 
 Feel free to reach out for collaboration or opportunities:
 
-- 📧 Email: [aryandwivedi2207@gmail.com](mailto:aryandwivedi2207@gmail.com)
+- 📧 Email: [aryandwivedi2207@gmail.com](mailto:aryandwivedi221220@gmail.com)
 - 💼 LinkedIn: [linkedin.com/in/aryan-dwivedi-390056335](https://www.linkedin.com/in/aryan-dwivedi-390056335)
 - 🧑‍💻 GitHub: [github.com/Aryan22dwivedi](https://github.com/Aryan22dwivedi)
 
