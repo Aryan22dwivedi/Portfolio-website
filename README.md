@@ -44,7 +44,7 @@ I'm Aryan Kumar Dwivedi, an aspiring **Data Scientist & AI Enthusiast**, pursuin
 
 | Project | Description | Tech Used |
 |--------|-------------|-----------|
-| [E-Commerce Data Insights](https://github.com/Aryan22dwivedi/E-Commerce-Data-Insights) | Power BI dashboards analyzing sales and trends | Power BI |
+| E-Commerce Data Insights | Power BI dashboards analyzing sales and trends | Power BI |
 | Customer Segmentation | K-Means clustering for targeted marketing | Python, Pandas, Scikit-learn |
 | Pizza Sales Analysis | MySQL queries and Power BI visualization | SQL, Power BI |
 | Netflix User Behavior | Genre preferences and watch time trends | Power BI |
