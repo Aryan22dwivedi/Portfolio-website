@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aryan Kumar Dwivedi | Full-Stack & AI Engineer</title>
+    <title>Aryan Kumar Dwivedi | Data Engineering & AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +15,8 @@
             --bg-grid: #18181b;
             --text-main: #f4f4f5;
             --text-muted: #a1a1aa;
-            --accent-primary: #f59e0b; /* Amber */
-            --accent-secondary: #10b981; /* Emerald */
+            --accent-primary: #f59e0b; 
+            --accent-secondary: #10b981; 
             --card-bg: rgba(24, 24, 27, 0.7);
             --card-border: rgba(245, 158, 11, 0.15);
         }
@@ -25,7 +25,6 @@
             font-family: 'Outfit', sans-serif;
             background-color: var(--bg-base);
             color: var(--text-main);
-            /* Geometric background depth */
             background-image: 
                 linear-gradient(var(--bg-grid) 1px, transparent 1px),
                 linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
@@ -41,7 +40,6 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Staggered load animations */
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -70,20 +68,6 @@
             transform: translateY(-4px);
         }
 
-        .skill-tag {
-            background-color: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: var(--accent-secondary);
-            padding: 0.35rem 0.85rem;
-            font-size: 0.85rem;
-            transition: all 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            background-color: var(--accent-secondary);
-            color: var(--bg-base);
-        }
-
         .nav-link {
             position: relative;
             color: var(--text-muted);
@@ -94,19 +78,15 @@
             color: var(--accent-primary);
         }
 
-        .nav-link::after {
-            content: '';
+        .timeline-dot {
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--accent-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
+            left: -5px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-secondary);
+            box-shadow: 0 0 10px var(--accent-secondary);
         }
     </style>
 </head>
@@ -117,9 +97,9 @@
             <h1 class="text-2xl font-bold tracking-tighter text-amber-500">AKD<span class="text-emerald-500">.</span></h1>
             <nav class="hidden md:flex space-x-8 font-mono text-sm">
                 <a href="#about" class="nav-link">01. About</a>
-                <a href="#projects" class="nav-link">02. Projects</a>
-                <a href="#skills" class="nav-link">03. Tech</a>
-                <a href="#contact" class="nav-link">04. Contact</a>
+                <a href="#experience" class="nav-link">02. Experience</a>
+                <a href="#projects" class="nav-link">03. Projects</a>
+                <a href="#certifications" class="nav-link">04. Certifications</a>
             </nav>
             <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-amber-500">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -128,9 +108,9 @@
         
         <div id="mobile-menu" class="hidden absolute w-full bg-zinc-900 border-b border-zinc-800 px-6 py-4 font-mono text-sm">
             <a href="#about" class="block py-3 text-zinc-300 hover:text-amber-500">01. About</a>
-            <a href="#projects" class="block py-3 text-zinc-300 hover:text-amber-500">02. Projects</a>
-            <a href="#skills" class="block py-3 text-zinc-300 hover:text-amber-500">03. Tech</a>
-            <a href="#contact" class="block py-3 text-zinc-300 hover:text-amber-500">04. Contact</a>
+            <a href="#experience" class="block py-3 text-zinc-300 hover:text-amber-500">02. Experience</a>
+            <a href="#projects" class="block py-3 text-zinc-300 hover:text-amber-500">03. Projects</a>
+            <a href="#certifications" class="block py-3 text-zinc-300 hover:text-amber-500">04. Certifications</a>
         </div>
     </header>
 
@@ -141,15 +121,18 @@
             <h2 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4 animate-up delay-200">
                 Aryan Kumar Dwivedi.
             </h2>
-            <h3 class="text-3xl md:text-5xl font-bold text-zinc-500 mb-6 animate-up delay-300">
-                I engineer full-stack & AI solutions.
+            <h3 class="text-3xl md:text-4xl font-bold text-zinc-500 mb-6 animate-up delay-300">
+                Data Analytics, Engineering & AI.
             </h3>
             <p class="max-w-2xl text-lg text-zinc-400 mb-10 animate-up delay-400">
-                Currently pursuing my BCA in Data Science & AI at BBDU, Lucknow. I specialize in building robust web applications, training machine learning models, and bridging the gap between intelligent backend logic and high-performance frontends.
+                Analytical BCA graduate specializing in extracting actionable insights via SQL/Python, building robust data pipelines, and engineering scalable software solutions for business decision-making. 
             </p>
             <div class="flex gap-4 animate-up delay-400 font-mono text-sm">
                 <a href="https://github.com/Aryan22dwivedi" target="_blank" class="border border-zinc-700 bg-zinc-800/50 hover:bg-zinc-700 hover:border-amber-500 text-white px-6 py-3 transition-all duration-300">
                     [ GitHub ]
+                </a>
+                <a href="https://hub.docker.com/" target="_blank" class="border border-zinc-700 bg-zinc-800/50 hover:bg-zinc-700 hover:border-amber-500 text-white px-6 py-3 transition-all duration-300">
+                    [ Docker Hub ]
                 </a>
                 <a href="https://www.linkedin.com/in/aryan-dwivedi-390056335" target="_blank" class="border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500 hover:text-zinc-950 text-emerald-500 px-6 py-3 transition-all duration-300">
                     [ LinkedIn ]
@@ -157,163 +140,184 @@
             </div>
         </section>
 
-        <section id="about" class="py-20 animate-up">
-            <div class="flex items-center mb-10">
-                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">01.</span> About Me</h3>
+        <section id="experience" class="py-20 animate-up">
+            <div class="flex items-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">02.</span> Professional Experience</h3>
                 <div class="h-px bg-zinc-800 flex-grow ml-6"></div>
             </div>
-            
-            <div class="grid md:grid-cols-5 gap-12 items-start">
-                <div class="md:col-span-3 space-y-4 text-zinc-400 text-lg leading-relaxed">
-                    <p>
-                        My focus isn't just on writing code; it's on architecting systems that solve actual problems. From developing scalable backend routes in NestJS to integrating machine learning models for computer vision, I push past basic tutorials into production-grade logic.
-                    </p>
-                    <p>
-                        Recently, I've been heavily focused on full-stack web development combining frameworks like Next.js and React with powerful backend AI integrations like Tesseract and Gemini. I also possess a solid foundation in core computer science principles, spanning everything from Blockchain fundamentals to Support Vector Machines.
-                    </p>
-                </div>
+
+            <div class="relative border-l border-zinc-800 ml-3 pl-8 space-y-12">
                 
-                <div class="md:col-span-2 glass-card p-6 border-l-4 border-l-emerald-500">
-                    <h4 class="font-heading text-xl text-white mb-4">Academic Background</h4>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-bold text-zinc-200">BCA - Data Science & AI</p>
-                            <p class="text-sm font-mono text-amber-500 mt-1">Babu Banarasi Das University | 2023-2026</p>
-                            <p class="text-sm text-zinc-400 mt-2">CGPA: 9.00</p>
-                        </div>
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                        <h4 class="text-xl font-bold text-zinc-100">Support Software Engineer Intern <span class="text-emerald-500">@ Edubuk Pvt. Ltd.</span></h4>
+                        <span class="font-mono text-sm text-zinc-500">Apr 2026 - Jun 2026</span>
                     </div>
+                    <ul class="list-disc list-inside text-zinc-400 space-y-2 mt-4 text-sm leading-relaxed">
+                        <li>Created and managed real-world Data ETL pipelines for 12K+ records to drive business solutions.</li>
+                        <li>Assisted in development, user testing, and maintaining software application stability.</li>
+                    </ul>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                        <h4 class="text-xl font-bold text-zinc-100">Web Development Intern <span class="text-emerald-500">@ Promosys Technology Pvt. Ltd.</span></h4>
+                        <span class="font-mono text-sm text-zinc-500">Jan 2026 - Apr 2026</span>
+                    </div>
+                    <ul class="list-disc list-inside text-zinc-400 space-y-2 mt-4 text-sm leading-relaxed">
+                        <li>Applied architectural concepts to design the working infrastructure of CloudVault.</li>
+                        <li>Integrated analytics via a specialized snapshot-based charting system for live price tracking.</li>
+                    </ul>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                        <h4 class="text-xl font-bold text-zinc-100">Data Science Intern <span class="text-emerald-500">@ Tamizhan Skills</span></h4>
+                        <span class="font-mono text-sm text-zinc-500">Jun 2025 - Jul 2025</span>
+                    </div>
+                    <ul class="list-disc list-inside text-zinc-400 space-y-2 mt-4 text-sm leading-relaxed">
+                        <li>Focused on real-world data interpretation, statistical modeling, and delivering actionable business insights.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="py-20 animate-up">
             <div class="flex items-center mb-12">
-                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">02.</span> Technical Projects</h3>
+                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">03.</span> Technical Projects</h3>
                 <div class="h-px bg-zinc-800 flex-grow ml-6"></div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="glass-card p-8 flex flex-col h-full group">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                        </a>
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">Product Explorer</h4>
+                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                        Engineered an asynchronous pipeline with Redis, BullMQ, and Playwright stealth-scraping to extract live e-commerce data without blocking application threads. Architected a PostgreSQL database with smart caching to enforce strict schema integrity.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">TypeScript</span>
+                        <span class="text-xs text-amber-500">PostgreSQL</span>
+                        <span class="text-xs text-amber-500">Redis</span>
+                        <span class="text-xs text-amber-500">NestJS</span>
                     </div>
+                </div>
+
+                <div class="glass-card p-8 flex flex-col h-full group">
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">CloudVault & ScanApp</h4>
+                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                        Developed a scalable cloud storage and OCR scanning system, containerized via Docker with Minio and PostgreSQL for automated data extraction.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">Python</span>
+                        <span class="text-xs text-amber-500">React</span>
+                        <span class="text-xs text-amber-500">Docker</span>
+                        <span class="text-xs text-amber-500">Minio</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 flex flex-col h-full group">
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">E-Commerce Data Insights</h4>
+                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                        Designed interactive dashboards analyzing a 6% jump in user transaction data (Quantity, UnitPrice) during seasonal trends to support business strategy.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">Power BI</span>
+                        <span class="text-xs text-amber-500">Data Analytics</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 flex flex-col h-full group">
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">Customer Segmentation</h4>
+                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                        Implemented the Elbow Method for optimal cluster selection; successfully visualized 5 distinct customer demographic clusters in 2D and 3D.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">Python</span>
+                        <span class="text-xs text-amber-500">K-Means</span>
+                        <span class="text-xs text-amber-500">Jupyter</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-8 flex flex-col h-full group">
                     <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">TruJobs AI Platform</h4>
                     <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
-                        Engineered frontend modules for an AI-driven pre-screening and interview platform. Designed structured, responsive components (e.g., SpecificCompanyCandidates) to evaluate candidate viability using Next.js and React.
+                        Engineered the frontend architecture and dynamic, state-heavy React components for an AI-driven interview platform to evaluate candidate flows.
                     </p>
                     <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">React</span>
+                        <span class="text-xs text-amber-500">TypeScript</span>
                         <span class="text-xs text-amber-500">Next.js</span>
-                        <span class="text-xs text-amber-500">React</span>
-                        <span class="text-xs text-amber-500">Tailwind</span>
                     </div>
                 </div>
 
                 <div class="glass-card p-8 flex flex-col h-full group">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
-                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">Intelligent OCR Engine</h4>
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">Sales Forecasting</h4>
                     <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
-                        Developed an advanced Optical Character Recognition tool leveraging Tesseract and Gemini AI. Handled complex backend routing (`TOOL_API`) and configured secure AWS S3 bucket environments (`demo-bucket`) for data processing.
+                        Built a Linear Regression model to predict future sales performance and evaluated accuracy using Matplotlib data visualizations.
                     </p>
                     <div class="flex flex-wrap gap-2 mt-auto font-mono">
                         <span class="text-xs text-amber-500">Python</span>
-                        <span class="text-xs text-amber-500">Gemini AI</span>
-                        <span class="text-xs text-amber-500">Tesseract</span>
-                        <span class="text-xs text-amber-500">S3</span>
+                        <span class="text-xs text-amber-500">Linear Regression</span>
+                        <span class="text-xs text-amber-500">Matplotlib</span>
                     </div>
                 </div>
 
-                <div class="glass-card p-8 flex flex-col h-full group">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
-                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">CloudVault</h4>
-                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
-                        A secure, full-stack data management application. Architected the client interface and robust backend services, ensuring deep integration between modern frontend state and secure storage logic.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
-                        <span class="text-xs text-amber-500">React</span>
-                        <span class="text-xs text-amber-500">NestJS</span>
-                        <span class="text-xs text-amber-500">Docker</span>
-                    </div>
-                </div>
+            </div>
+        </section>
 
-                <div class="glass-card p-8 flex flex-col h-full group">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">Movie Recommender System</h4>
-                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
-                        Engineered a machine learning recommendation algorithm. Handled dataset processing, feature extraction, and model training to accurately predict user preferences.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
-                        <span class="text-xs text-amber-500">Python</span>
-                        <span class="text-xs text-amber-500">Scikit-Learn</span>
-                        <span class="text-xs text-amber-500">Pandas</span>
-                    </div>
-                </div>
+        <section id="certifications" class="py-20 animate-up">
+            <div class="flex items-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">04.</span> Certifications</h3>
+                <div class="h-px bg-zinc-800 flex-grow ml-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-sm">
+                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Data Science Foundations - Level 1</div>
+                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Predictive Modeling Fundamentals I</div>
+                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Cognos Analytics Reporting Essentials</div>
+                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Data Visualization</div>
+                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Data Science 101 & Python 101</div>
+                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM NoSQL and DBaaS 101</div>
+                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Cloud Essentials</div>
+                <div class="glass-card p-4 border-l-2 border-l-amber-500 text-zinc-300">Cyber Security Workshop (Umaga Tech)</div>
             </div>
         </section>
 
         <section id="skills" class="py-20 animate-up">
-            <div class="flex items-center mb-10">
-                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">03.</span> Core Technologies</h3>
-                <div class="h-px bg-zinc-800 flex-grow ml-6"></div>
-            </div>
-            
             <div class="glass-card p-10 font-mono">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div class="space-y-3">
-                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Languages</h5>
-                        <div class="text-zinc-300">JavaScript / TS</div>
-                        <div class="text-zinc-300">Python</div>
-                        <div class="text-zinc-300">Java</div>
-                        <div class="text-zinc-300">SQL</div>
+                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Data & ML</h5>
+                        <div class="text-zinc-300">Pandas, NumPy</div>
+                        <div class="text-zinc-300">K-Means, Linear Regression</div>
+                        <div class="text-zinc-300">ETL Pipelines, OCR</div>
                     </div>
                     
                     <div class="space-y-3">
-                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Frontend</h5>
-                        <div class="text-zinc-300">React.js</div>
-                        <div class="text-zinc-300">Next.js</div>
-                        <div class="text-zinc-300">Tailwind CSS</div>
+                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Languages & Web</h5>
+                        <div class="text-zinc-300">Python, SQL, Bash</div>
+                        <div class="text-zinc-300">JavaScript, TypeScript</div>
+                        <div class="text-zinc-300">React, Next.js</div>
                     </div>
                     
                     <div class="space-y-3">
-                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Backend & Tools</h5>
-                        <div class="text-zinc-300">NestJS</div>
-                        <div class="text-zinc-300">Docker</div>
-                        <div class="text-zinc-300">Git / AWS S3</div>
-                    </div>
-                    
-                    <div class="space-y-3">
-                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Data & AI</h5>
-                        <div class="text-zinc-300">Gemini AI API</div>
-                        <div class="text-zinc-300">Tesseract OCR</div>
-                        <div class="text-zinc-300">Pandas / Scikit</div>
-                        <div class="text-zinc-300">Power BI</div>
+                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Tools & Deployment</h5>
+                        <div class="text-zinc-300">Docker, N8N</div>
+                        <div class="text-zinc-300">PostgreSQL, MySQL</div>
+                        <div class="text-zinc-300">PowerBI, Jupyter, FastAPI</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="py-32 text-center animate-up">
-            <h3 class="text-sm font-mono text-amber-500 mb-4">04. What's Next?</h3>
+            <h3 class="text-sm font-mono text-amber-500 mb-4">05. What's Next?</h3>
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
             <p class="max-w-md mx-auto text-zinc-400 mb-10">
-                Whether you have a question, want to collaborate on a full-stack project, or discuss data analytics and AI—my inbox is open. 
+                Whether you have a question, want to collaborate on a data pipeline, or discuss AI integrations—my inbox is open. 
             </p>
             <a href="mailto:aryandwivedi221220@gmail.com" class="inline-block border border-amber-500 text-amber-500 hover:bg-amber-500/10 px-8 py-4 font-mono transition-colors duration-300">
                 Say Hello
@@ -326,7 +330,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         
