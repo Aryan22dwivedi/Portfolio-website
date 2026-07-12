@@ -1,73 +1,67 @@
-# Portfolio-website
-This is my portfolio website contains some of my projects 
+# Aryan Kumar Dwivedi | Data Analytics, Engineering & AI
 
-# Aryan Kumar Dwivedi - Portfolio Website 🌐
+This repository contains the source code for my personal portfolio, engineered to showcase my professional experience, full-stack projects, and technical capabilities in data engineering and artificial intelligence.
 
-This is the source code for my personal portfolio website, built using **HTML**, **Tailwind CSS**, and a touch of JavaScript. It highlights my skills, education, projects, and contact information.
-
+🔗 **[View Live Website](https://aryan22dwivedi.github.io/Portfolio-website/index.html)**
 
 ---
 
-## 🔗 View Live
+## 🧑‍💻 Overview
 
-👉 [**View Website**](https://aryan22dwivedi.github.io/Portfolio-website/index.html)
+I am an analytical developer specializing in extracting actionable insights via SQL/Python, building robust data pipelines, and engineering scalable software solutions. I am currently pursuing my BCA in Data Science & AI at Babu Banarasi Das University, Lucknow (Current CGPA: 9.00).
 
-
-
-## 📌 Features
-
-- **Responsive design** using Tailwind CSS
-- Smooth scrolling navigation
-- Dark-themed UI with a glass-effect layout
-- Hero section with name, photo, and tagline
-- Sections:
-  - 📖 About Me
-  - 💼 Projects
-  - 🛠️ Technical Skills
-  - 📬 Contact
+My focus bridges the gap between intelligent backend logic, machine learning models, and high-performance frontend architecture.
 
 ---
 
-## 🧑‍💻 About Me
+## 🛠️ Core Technologies
 
-I'm Aryan Kumar Dwivedi, an aspiring **Data Scientist & AI Enthusiast**, pursuing BCA in Data Science & AI from Babu Banarasi Das University, Lucknow.
-
-
-**Current CGPA**: 9.00  
-**12th Grade**: 86.2% (Kendriya Vidyalaya)
-
-
+* **Data & ML:** Pandas, NumPy, K-Means, Linear Regression, ETL Pipelines, Tesseract OCR, Gemini AI
+* **Languages:** Python, SQL, JavaScript, TypeScript, Java, Bash
+* **Frontend:** React, Next.js, Tailwind CSS, HTML5/CSS3
+* **Backend & DevOps:** NestJS, Docker, PostgreSQL, MySQL, Redis, Minio, AWS S3
+* **Analytics Tools:** Power BI, Jupyter, Matplotlib, Seaborn
 
 ---
 
-## 📊 Projects Highlighted
+## 💼 Professional Experience
 
-| Project | Description | Tech Used |
-|--------|-------------|-----------|
-| E-Commerce Data Insights | Power BI dashboards analyzing sales and trends | Power BI |
-| Customer Segmentation | K-Means clustering for targeted marketing | Python, Pandas, Scikit-learn |
-| Pizza Sales Analysis | MySQL queries and Power BI visualization | SQL, Power BI |
-| Netflix User Behavior | Genre preferences and watch time trends | Power BI |
-| Sales Forecasting | Predictive model for future sales | Python, Matplotlib |
-| COVID-19 Data Analysis | Global COVID-19 trends with visualizations | Power BI |
+* **Support Software Engineer Intern @ Edubuk Pvt. Ltd.**
+  Managed real-world Data ETL pipelines for 12K+ records to drive business solutions and maintained application stability.
+* **Web Development Intern @ Promosys Technology Pvt. Ltd.**
+  Designed the architectural infrastructure for CloudVault and integrated specialized snapshot-based charting systems for live price tracking.
+* **Data Science Intern @ Tamizhan Skills**
+  Executed real-world data interpretation and statistical modeling to deliver actionable business insights.
 
 ---
 
-## 🧠 Skills
+## 📊 Engineered Projects
 
-- **Languages**: Python, Java, JavaScript, SQL (MySQL)
-- **Libraries**: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
-- **Tools**: Power BI, DAX, Git & GitHub, IBM Watson Studio
-- **Techniques**: ETL, K-Means Clustering, Linear Regression, Data Visualization
+| Project | Architecture & Description | Tech Stack |
+|---------|-----------------------------|------------|
+| **Product Explorer** | Engineered an async pipeline with Redis, BullMQ, and Playwright stealth-scraping to extract live e-commerce data without blocking application threads. Architected a PostgreSQL database with smart caching. | TypeScript, PostgreSQL, Redis, NestJS |
+| **CloudVault & ScanApp** | Developed a scalable cloud storage and intelligent OCR scanning system. Containerized via Docker with Minio and PostgreSQL for automated data extraction. | Python, React, Docker, Minio |
+| **TruJobs AI Platform** | Engineered the frontend architecture and dynamic, state-heavy components (SpecificCompanyCandidates) for an AI-driven interview and pre-screening platform. | React, TypeScript, Next.js |
+| **Customer Segmentation** | Implemented the Elbow Method for optimal cluster selection; successfully visualized 5 distinct customer demographic clusters in 2D and 3D. | Python, K-Means, Scikit-learn |
+| **E-Commerce Insights** | Designed interactive dashboards analyzing user transaction data (Quantity, UnitPrice) during seasonal trends to support business strategy. | Power BI, Data Analytics |
+| **Sales Forecasting** | Built a Linear Regression model to predict future sales performance and evaluated accuracy using advanced data visualizations. | Python, Matplotlib |
+
+---
+
+## 📜 Certifications
+
+* **IBM Data Science Foundations** - Level 1
+* **IBM Predictive Modeling Fundamentals** - Level I
+* **IBM Cognos Analytics Reporting Essentials**
+* **IBM Data Visualization**
+* **IBM NoSQL and DBaaS 101**
+* **IBM Cloud Essentials**
 
 ---
 
-## 📬 Contact
+## 📬 Connect With Me
 
-Feel free to reach out for collaboration or opportunities:
-
-- 📧 Email: [aryandwivedi2207@gmail.com](mailto:aryandwivedi221220@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/aryan-dwivedi-390056335](https://www.linkedin.com/in/aryan-dwivedi-390056335)
-- 🧑‍💻 GitHub: [github.com/Aryan22dwivedi](https://github.com/Aryan22dwivedi)
-
----
+* 📧 **Email:** [aryandwivedi221220@gmail.com](mailto:aryandwivedi221220@gmail.com)
+* 💼 **LinkedIn:** [Aryan Dwivedi](https://www.linkedin.com/in/aryan-dwivedi-390056335)
+* 🧑‍💻 **GitHub:** [Aryan22dwivedi](https://github.com/Aryan22dwivedi)
+* 🐳 **Docker Hub:** [Docker Profile](https://hub.docker.com/)
