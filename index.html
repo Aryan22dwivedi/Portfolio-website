@@ -1,254 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aryan Kumar Dwivedi - Web3 Portfolio</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Kumar Dwivedi | Full-Stack & AI Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #09090b;
+            --bg-grid: #18181b;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --accent-primary: #f59e0b; /* Amber */
+            --accent-secondary: #10b981; /* Emerald */
+            --card-bg: rgba(24, 24, 27, 0.7);
+            --card-border: rgba(245, 158, 11, 0.15);
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827;
-            color: #d1d5db;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            /* Geometric background depth */
+            background-image: 
+                linear-gradient(var(--bg-grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+            background-size: 3rem 3rem;
+            background-position: center center;
         }
-        .glass-effect {
-            background: rgba(31, 41, 55, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
         }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Staggered load animations */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.1);
+            transform: translateY(-4px);
+        }
+
         .skill-tag {
-            background-color: #374151;
-            color: #f3f4f6;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--accent-secondary);
+            padding: 0.35rem 0.85rem;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
         }
+
         .skill-tag:hover {
-            background-color: #4f46e5;
-            transform: translateY(-2px);
+            background-color: var(--accent-secondary);
+            color: var(--bg-base);
         }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.2);
-        }
+
         .nav-link {
-            transition: color 0.3s ease;
+            position: relative;
+            color: var(--text-muted);
+            transition: color 0.2s ease;
         }
+        
         .nav-link:hover {
-            color: #6366f1;
+            color: var(--accent-primary);
         }
-        .hero-glow {
-            box-shadow: 0 0 40px rgba(79, 70, 229, 0.5), 0 0 80px rgba(167, 139, 250, 0.3);
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-primary);
+            transition: width 0.3s ease;
         }
-</style>
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-emerald-500 selection:text-white min-h-screen">
 
-<!-- Header -->
-<header class="fixed top-0 left-0 right-0 z-50 glass-effect">
-<div class="container mx-auto px-6 py-4 flex justify-between items-center">
-<h1 class="text-2xl font-bold text-white">AKD</h1>
-<nav class="hidden md:flex space-x-8">
-<a href="#about" class="nav-link">About</a>
-<a href="#projects" class="nav-link">Projects</a>
-<a href="#skills" class="nav-link">Skills</a>
-<a href="#contact" class="nav-link">Contact</a>
-</nav>
+    <header class="fixed top-0 w-full z-50 bg-[#09090b]/80 backdrop-blur-md border-b border-zinc-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center animate-up">
+            <h1 class="text-2xl font-bold tracking-tighter text-amber-500">AKD<span class="text-emerald-500">.</span></h1>
+            <nav class="hidden md:flex space-x-8 font-mono text-sm">
+                <a href="#about" class="nav-link">01. About</a>
+                <a href="#projects" class="nav-link">02. Projects</a>
+                <a href="#skills" class="nav-link">03. Tech</a>
+                <a href="#contact" class="nav-link">04. Contact</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-amber-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden absolute w-full bg-zinc-900 border-b border-zinc-800 px-6 py-4 font-mono text-sm">
+            <a href="#about" class="block py-3 text-zinc-300 hover:text-amber-500">01. About</a>
+            <a href="#projects" class="block py-3 text-zinc-300 hover:text-amber-500">02. Projects</a>
+            <a href="#skills" class="block py-3 text-zinc-300 hover:text-amber-500">03. Tech</a>
+            <a href="#contact" class="block py-3 text-zinc-300 hover:text-amber-500">04. Contact</a>
+        </div>
+    </header>
 
-<button id="mobile-menu-button" class="md:hidden text-white">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-</button>
-</div>
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-<a href="#about" class="block py-2 nav-link">About</a>
-<a href="#projects" class="block py-2 nav-link">Projects</a>
-<a href="#skills" class="block py-2 nav-link">Skills</a>
-<a href="#contact" class="block py-2 nav-link">Contact</a>
-<!-- <button class="mt-4 w-full bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
-                Connect Wallet
-</button> -->
-</div>
-</header>
+    <main class="container mx-auto px-6 pt-32 pb-20 max-w-6xl">
+        
+        <section id="home" class="min-h-[70vh] flex flex-col justify-center items-start mb-20">
+            <p class="font-mono text-emerald-500 mb-4 animate-up delay-100">> System.out.println("Hello, World!");</p>
+            <h2 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4 animate-up delay-200">
+                Aryan Kumar Dwivedi.
+            </h2>
+            <h3 class="text-3xl md:text-5xl font-bold text-zinc-500 mb-6 animate-up delay-300">
+                I engineer full-stack & AI solutions.
+            </h3>
+            <p class="max-w-2xl text-lg text-zinc-400 mb-10 animate-up delay-400">
+                Currently pursuing my BCA in Data Science & AI at BBDU, Lucknow. I specialize in building robust web applications, training machine learning models, and bridging the gap between intelligent backend logic and high-performance frontends.
+            </p>
+            <div class="flex gap-4 animate-up delay-400 font-mono text-sm">
+                <a href="https://github.com/Aryan22dwivedi" target="_blank" class="border border-zinc-700 bg-zinc-800/50 hover:bg-zinc-700 hover:border-amber-500 text-white px-6 py-3 transition-all duration-300">
+                    [ GitHub ]
+                </a>
+                <a href="https://www.linkedin.com/in/aryan-dwivedi-390056335" target="_blank" class="border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500 hover:text-zinc-950 text-emerald-500 px-6 py-3 transition-all duration-300">
+                    [ LinkedIn ]
+                </a>
+            </div>
+        </section>
 
-<main class="container mx-auto px-6 pt-24 md:pt-32">
-<!-- Hero Section -->
-<section id="home" class="text-center py-20">
-<img src="https://raw.githubusercontent.com/Aryan22dwivedi/Portfolio-website/refs/heads/main/1719946872_IMG-20230330-WA0048.jpg" alt="Aryan Kumar Dwivedi" class="w-48 h-48 rounded-full mx-auto mb-6 border-4 border-indigo-500 hero-glow object-cover">
-<h2 class="text-4xl md:text-6xl font-bold text-white leading-tight">Aryan Kumar Dwivedi</h2>
-<p class="mt-4 text-xl md:text-2xl text-indigo-300">Aspiring Data Scientist & AI Enthusiast</p>
-<p class="mt-6 max-w-3xl mx-auto text-lg">
-                Passionate about building intelligent solutions to solve practical problems. Committed to continuous learning and collaborative development.
-</p>
-<div class="mt-8 flex justify-center gap-4">
-<a href="https://github.com/Aryan22dwivedi" target="_blank" class="bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-600 transition-colors">GitHub</a>
-<a href="https://www.linkedin.com/in/aryan-dwivedi-390056335" target="_blank" class="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition-colors">LinkedIn</a>
-</div>
-</section>
+        <section id="about" class="py-20 animate-up">
+            <div class="flex items-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">01.</span> About Me</h3>
+                <div class="h-px bg-zinc-800 flex-grow ml-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-12 items-start">
+                <div class="md:col-span-3 space-y-4 text-zinc-400 text-lg leading-relaxed">
+                    <p>
+                        My focus isn't just on writing code; it's on architecting systems that solve actual problems. From developing scalable backend routes in NestJS to integrating machine learning models for computer vision, I push past basic tutorials into production-grade logic.
+                    </p>
+                    <p>
+                        Recently, I've been heavily focused on full-stack web development combining frameworks like Next.js and React with powerful backend AI integrations like Tesseract and Gemini. I also possess a solid foundation in core computer science principles, spanning everything from Blockchain fundamentals to Support Vector Machines.
+                    </p>
+                </div>
+                
+                <div class="md:col-span-2 glass-card p-6 border-l-4 border-l-emerald-500">
+                    <h4 class="font-heading text-xl text-white mb-4">Academic Background</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-bold text-zinc-200">BCA - Data Science & AI</p>
+                            <p class="text-sm font-mono text-amber-500 mt-1">Babu Banarasi Das University | 2023-2026</p>
+                            <p class="text-sm text-zinc-400 mt-2">CGPA: 9.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- About Section -->
-<section id="about" class="py-20">
-<div class="glass-effect rounded-2xl p-8 md:p-12">
-<h3 class="text-3xl font-bold text-white mb-6 text-center">About Me</h3>
-<div class="grid md:grid-cols-2 gap-8 items-center">
-<div>
-<p class="mb-4">
-                            I am an aspiring Data Scientist and AI enthusiast currently pursuing a Bachelor of Computer Applications in Data Science & AI from Babu Banarasi Das University, Lucknow.
-</p>
-<p class="mb-4">
-                            With a strong foundation in Python, Machine Learning, and Data Analysis, I have a proven track record of completing real-world projects and internships. I am skilled in using tools like Pandas, NumPy, Scikit-learn, and Power BI to extract insights and build predictive models.
-</p>
-<p>
-                            I thrive in collaborative environments and am always eager to explore new technologies and contribute to innovative projects.
-</p>
-</div>
-<div class="bg-gray-800 p-6 rounded-lg">
-<h4 class="font-semibold text-lg text-white mb-4">Education</h4>
-<div class="border-l-2 border-indigo-500 pl-4">
-<p class="font-bold">Bachelor of Computer Applications, Data Science & AI</p>
-<p class="text-sm text-gray-400">Babu Banarasi Das University, Lucknow | 2023-2026</p>
-<p class="text-sm text-gray-400">Last Sem CGPA: 9.00</p>
-</div>
-<div class="border-l-2 border-indigo-500 pl-4 mt-4">
-<p class="font-bold">Senior School Certificate</p>
-<p class="text-sm text-gray-400">Kendriya Vidyalaya (KV) | 2021-2023</p>
-<p class="text-sm text-gray-400">Grade: 86.2%</p>
-</div>
-</div>
-</div>
-</div>
-</section>
+        <section id="projects" class="py-20 animate-up">
+            <div class="flex items-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">02.</span> Technical Projects</h3>
+                <div class="h-px bg-zinc-800 flex-grow ml-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card p-8 flex flex-col h-full group">
+                    <div class="flex justify-between items-start mb-4">
+                        <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">TruJobs AI Platform</h4>
+                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                        Engineered frontend modules for an AI-driven pre-screening and interview platform. Designed structured, responsive components (e.g., SpecificCompanyCandidates) to evaluate candidate viability using Next.js and React.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">Next.js</span>
+                        <span class="text-xs text-amber-500">React</span>
+                        <span class="text-xs text-amber-500">Tailwind</span>
+                    </div>
+                </div>
 
-<!-- Projects Section -->
-<section id="projects" class="py-20">
-<h3 class="text-3xl font-bold text-white mb-12 text-center">My Projects</h3>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Project 1 -->
-<div class="glass-effect rounded-2xl p-6 project-card flex flex-col">
-<h4 class="text-xl font-bold text-white mb-2">E-Commerce Data Insights</h4>
-<p class="text-gray-400 mb-4 flex-grow">Designed interactive Power BI dashboards to analyze transaction data, uncovering key sales trends and customer behavior patterns.</p>
-<a href="https://github.com/Aryan22dwivedi/E-Commerce-Data-Insights" target="_blank" class="mt-auto bg-indigo-600 text-white text-center px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
-                        View on GitHub
-</a>
-</div>
-<!-- Project 2 -->
-<div class="glass-effect rounded-2xl p-6 project-card flex flex-col">
-<h4 class="text-xl font-bold text-white mb-2">Customer Segmentation</h4>
-<p class="text-gray-400 mb-4 flex-grow">Utilized K-Means clustering in Python to segment customers based on age, income, and spending habits, enabling targeted marketing strategies.</p>
-<a href="https://github.com/Aryan22dwivedi/customer-segmentation-with-k-mean-clustering" target="_blank" class="mt-auto bg-indigo-600 text-white text-center px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
-                        View on GitHub
-</a>
-</div>
-<!-- Project 3 -->
-<div class="glass-effect rounded-2xl p-6 project-card flex flex-col">
-<h4 class="text-xl font-bold text-white mb-2">Pizza Sales Analysis</h4>
-<p class="text-gray-400 mb-4 flex-grow">Analyzed the sales of pizza from january(2015) to december(2015) with SQL queries (MySQL) and dashboard (PowerBi) .</p>
-<a href="https://github.com/Aryan22dwivedi/Pizza_sales_analysis" target="_blank" class="mt-auto bg-indigo-600 text-white text-center px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
-                        View on GitHub
-</a>
-</div> 
-<!-- Project 4 -->
-<div class="glass-effect rounded-2xl p-6 project-card flex flex-col">
-<h4 class="text-xl font-bold text-white mb-2">Netflix User Behavior Analysis</h4>
-<p class="text-gray-400 mb-4 flex-grow">Visualized watch hours, genre preferences, and user engagement trends for Netflix data using Power BI to derive actionable insights.</p>
-<a href="https://github.com/Aryan22dwivedi" target="_blank" class="mt-auto bg-indigo-600 text-white text-center px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
-                        View on GitHub
-</a>
-</div>
-<!-- Project 5 -->
-<div class="glass-effect rounded-2xl p-6 project-card flex flex-col">
-<h4 class="text-xl font-bold text-white mb-2">Sales Forecasting</h4>
-<p class="text-gray-400 mb-4 flex-grow">Built a linear regression model to predict future sales data and created compelling visualizations of the results using Matplotlib.</p>
-<a href="https://github.com/Aryan22dwivedi" target="_blank" class="mt-auto bg-indigo-600 text-white text-center px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
-                        View on GitHub
-</a>
-</div>
-<!-- Project 6 -->
-<div class="glass-effect rounded-2xl p-6 project-card flex flex-col">
-<h4 class="text-xl font-bold text-white mb-2">COVID-19 Data Analysis</h4>
-<p class="text-gray-400 mb-4 flex-grow">Performed data cleaning, processing, and visualization of a large global COVID-19 dataset with Power BI to track and analyze the pandemic's spread.</p>
-<a href="https://github.com/Aryan22dwivedi" target="_blank" class="mt-auto bg-indigo-600 text-white text-center px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors">
-                        View on GitHub
-</a>
-</div>
-</div>
-</section>
+                <div class="glass-card p-8 flex flex-col h-full group">
+                    <div class="flex justify-between items-start mb-4">
+                        <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">Intelligent OCR Engine</h4>
+                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                        Developed an advanced Optical Character Recognition tool leveraging Tesseract and Gemini AI. Handled complex backend routing (`TOOL_API`) and configured secure AWS S3 bucket environments (`demo-bucket`) for data processing.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">Python</span>
+                        <span class="text-xs text-amber-500">Gemini AI</span>
+                        <span class="text-xs text-amber-500">Tesseract</span>
+                        <span class="text-xs text-amber-500">S3</span>
+                    </div>
+                </div>
 
-<!-- Skills Section -->
-<section id="skills" class="py-20">
-<div class="glass-effect rounded-2xl p-8 md:p-12">
-<h3 class="text-3xl font-bold text-white mb-8 text-center">Technical Skills</h3>
-<div class="flex flex-wrap justify-center gap-3 md:gap-4">
-<span class="skill-tag">Python</span>
-<span class="skill-tag">Java</span>
-<span class="skill-tag">JavaScript</span>
-<span class="skill-tag">SQL (MySQL)</span>
-<span class="skill-tag">Git & GitHub</span>
-<span class="skill-tag">Pandas</span>
-<span class="skill-tag">NumPy</span>
-<span class="skill-tag">Matplotlib</span>
-<span class="skill-tag">Seaborn</span>
-<span class="skill-tag">Power BI</span>
-<span class="skill-tag">DAX</span>
-<span class="skill-tag">ETL</span>
-<span class="skill-tag">Scikit-learn</span>
-<span class="skill-tag">K-Means</span>
-<span class="skill-tag">Linear Regression</span>
-<span class="skill-tag">IBM Watson Studio</span>
-</div>
-</div>
-</section>
+                <div class="glass-card p-8 flex flex-col h-full group">
+                    <div class="flex justify-between items-start mb-4">
+                        <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">CloudVault</h4>
+                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                        A secure, full-stack data management application. Architected the client interface and robust backend services, ensuring deep integration between modern frontend state and secure storage logic.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">React</span>
+                        <span class="text-xs text-amber-500">NestJS</span>
+                        <span class="text-xs text-amber-500">Docker</span>
+                    </div>
+                </div>
 
-<!-- Contact Section -->
-<section id="contact" class="py-20 text-center">
-<h3 class="text-3xl font-bold text-white mb-4">Get In Touch</h3>
-<p class="max-w-xl mx-auto mb-8">I'm currently open to new opportunities and collaborations. Feel free to reach out!</p>
-<a href="mailto:aryandwivedi2207@gmail.com" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full text-lg hover:bg-indigo-700 transition-colors">
-                aryandwivedi221220@gmail.com
-</a>
-</section>
-</main>
+                <div class="glass-card p-8 flex flex-col h-full group">
+                    <div class="flex justify-between items-start mb-4">
+                        <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-bold text-zinc-100 mb-2 group-hover:text-emerald-500 transition-colors">Movie Recommender System</h4>
+                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                        Engineered a machine learning recommendation algorithm. Handled dataset processing, feature extraction, and model training to accurately predict user preferences.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
+                        <span class="text-xs text-amber-500">Python</span>
+                        <span class="text-xs text-amber-500">Scikit-Learn</span>
+                        <span class="text-xs text-amber-500">Pandas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Footer -->
-<footer class="border-t border-gray-800 mt-20">
-<div class="container mx-auto px-6 py-6 text-center text-gray-500">
-<p>&copy; 2025 Aryan Kumar Dwivedi. All Rights Reserved.</p>
-</div>
-</footer>
+        <section id="skills" class="py-20 animate-up">
+            <div class="flex items-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">03.</span> Core Technologies</h3>
+                <div class="h-px bg-zinc-800 flex-grow ml-6"></div>
+            </div>
+            
+            <div class="glass-card p-10 font-mono">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="space-y-3">
+                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Languages</h5>
+                        <div class="text-zinc-300">JavaScript / TS</div>
+                        <div class="text-zinc-300">Python</div>
+                        <div class="text-zinc-300">Java</div>
+                        <div class="text-zinc-300">SQL</div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Frontend</h5>
+                        <div class="text-zinc-300">React.js</div>
+                        <div class="text-zinc-300">Next.js</div>
+                        <div class="text-zinc-300">Tailwind CSS</div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Backend & Tools</h5>
+                        <div class="text-zinc-300">NestJS</div>
+                        <div class="text-zinc-300">Docker</div>
+                        <div class="text-zinc-300">Git / AWS S3</div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <h5 class="text-zinc-500 mb-4 border-b border-zinc-800 pb-2">Data & AI</h5>
+                        <div class="text-zinc-300">Gemini AI API</div>
+                        <div class="text-zinc-300">Tesseract OCR</div>
+                        <div class="text-zinc-300">Pandas / Scikit</div>
+                        <div class="text-zinc-300">Power BI</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<script>
+        <section id="contact" class="py-32 text-center animate-up">
+            <h3 class="text-sm font-mono text-amber-500 mb-4">04. What's Next?</h3>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
+            <p class="max-w-md mx-auto text-zinc-400 mb-10">
+                Whether you have a question, want to collaborate on a full-stack project, or discuss data analytics and AI—my inbox is open. 
+            </p>
+            <a href="mailto:aryandwivedi221220@gmail.com" class="inline-block border border-amber-500 text-amber-500 hover:bg-amber-500/10 px-8 py-4 font-mono transition-colors duration-300">
+                Say Hello
+            </a>
+        </section>
+    </main>
+
+    <footer class="border-t border-zinc-800 py-6 text-center text-zinc-500 font-mono text-sm">
+        <p>Built by Aryan Kumar Dwivedi.</p>
+    </footer>
+
+    <script>
         // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                mobileMenu.classList.add('hidden'); // Close mobile menu on link click
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
         });
-</script>
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
