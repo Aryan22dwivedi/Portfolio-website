@@ -15,8 +15,8 @@
             --bg-grid: #18181b;
             --text-main: #f4f4f5;
             --text-muted: #a1a1aa;
-            --accent-primary: #f59e0b; /* Amber */
-            --accent-secondary: #10b981; /* Emerald */
+            --accent-primary: #f59e0b; 
+            --accent-secondary: #10b981;
             --card-bg: rgba(24, 24, 27, 0.7);
             --card-border: rgba(245, 158, 11, 0.15);
         }
@@ -106,6 +106,7 @@
 </head>
 <body class="antialiased selection:bg-emerald-500 selection:text-white min-h-screen">
 
+    <!-- Header -->
     <header class="fixed top-0 w-full z-50 bg-[#09090b]/80 backdrop-blur-md border-b border-zinc-800">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center animate-up">
             <h1 class="text-2xl font-bold tracking-tighter text-amber-500">AKD<span class="text-emerald-500">.</span></h1>
@@ -123,7 +124,9 @@
 
     <main class="container mx-auto px-6 pt-32 pb-20 max-w-6xl">
         
+        <!-- Hero Section -->
         <section id="home" class="min-h-[70vh] flex flex-col justify-center items-start mb-20">
+           
             <h2 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4 animate-up delay-200">
                 Aryan Kumar Dwivedi.
             </h2>
@@ -146,6 +149,7 @@
             </div>
         </section>
 
+        <!-- Experience Section -->
         <section id="experience" class="py-20 animate-up">
             <div class="flex items-center mb-12">
                 <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">02.</span> Professional Experience</h3>
@@ -176,9 +180,21 @@
                         <li>Integrated analytics via a specialized snapshot-based charting system for live price tracking.</li>
                     </ul>
                 </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                        <h4 class="text-xl font-bold text-zinc-100">Data Science Intern <span class="text-emerald-500">@ Tamizhan Skills</span></h4>
+                        <span class="font-mono text-sm text-zinc-500">Jun 2025 - Jul 2025</span>
+                    </div>
+                    <ul class="list-disc list-inside text-zinc-400 space-y-2 mt-4 text-sm leading-relaxed">
+                        <li>Focused on real-world data interpretation, statistical modeling, and delivering actionable business insights.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="py-20 animate-up">
             <div class="flex items-center mb-12">
                 <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">03.</span> Technical Projects</h3>
@@ -186,118 +202,136 @@
             </div>
             
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-8 flex flex-col h-full group">
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="text-xl font-bold text-zinc-100 group-hover:text-emerald-500 transition-colors">Product Explorer</h4>
-                        <a href="https://github.com/Aryan22dwivedi/Product-Explorer" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="View Source on GitHub">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
+                <!-- Top 2 Projects (Visible by Default) -->
+                <div class="glass-card p-8 flex flex-col h-full">
+                    <h4 class="text-xl font-bold text-zinc-100 mb-4 text-emerald-500 transition-colors">Product Explorer</h4>
                     <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
                         Engineered an asynchronous pipeline with Redis, BullMQ, and Playwright stealth-scraping to extract live e-commerce data without blocking application threads. Architected a PostgreSQL database with smart caching to enforce strict schema integrity.
                     </p>
-                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
-                        <span class="text-xs text-amber-500">TypeScript</span>
-                        <span class="text-xs text-amber-500">PostgreSQL</span>
-                        <span class="text-xs text-amber-500">Redis</span>
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono">
+                        <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">TypeScript</span>
+                        <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">PostgreSQL</span>
+                        <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Redis</span>
                     </div>
+                    <a href="https://github.com/Aryan22dwivedi/Product-Explorer" target="_blank" class="w-full text-center bg-zinc-800 hover:bg-amber-500 hover:text-zinc-900 border border-zinc-700 hover:border-amber-500 text-zinc-300 font-mono text-sm py-2 transition-all duration-300">
+                        🔗 GitHub Link
+                    </a>
                 </div>
 
-                <div class="glass-card p-8 flex flex-col h-full group">
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="text-xl font-bold text-zinc-100 group-hover:text-emerald-500 transition-colors">CloudVault & ScanApp</h4>
-                        <a href="https://github.com/Aryan22dwivedi/CodeVault" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="View Source on GitHub">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
+                <div class="glass-card p-8 flex flex-col h-full">
+                    <h4 class="text-xl font-bold text-zinc-100 mb-4 text-emerald-500 transition-colors">CloudVault & ScanApp</h4>
                     <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
                         Developed a scalable cloud storage and OCR scanning system, containerized via Docker with Minio and PostgreSQL for automated data extraction.
                     </p>
-                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
-                        <span class="text-xs text-amber-500">Python</span>
-                        <span class="text-xs text-amber-500">React</span>
-                        <span class="text-xs text-amber-500">Docker</span>
+                    <div class="flex flex-wrap gap-2 mb-6 font-mono">
+                        <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Python</span>
+                        <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">React</span>
+                        <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Docker</span>
                     </div>
-                </div>
-                
-                <div class="glass-card p-8 flex flex-col h-full group">
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="text-xl font-bold text-zinc-100 group-hover:text-emerald-500 transition-colors">TruJobs AI Platform</h4>
-                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="View Source on GitHub">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
-                        Engineered the frontend architecture and dynamic, state-heavy React components for an AI-driven interview platform to evaluate candidate flows.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
-                        <span class="text-xs text-amber-500">React</span>
-                        <span class="text-xs text-amber-500">TypeScript</span>
-                        <span class="text-xs text-amber-500">Next.js</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-8 flex flex-col h-full group">
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="text-xl font-bold text-zinc-100 group-hover:text-emerald-500 transition-colors">Customer Segmentation</h4>
-                        <a href="https://github.com/Aryan22dwivedi/customer-segmentation-with-k-mean-clustering" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="View Source on GitHub">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
-                        Implemented the Elbow Method for optimal cluster selection; successfully visualized 5 distinct customer demographic clusters in 2D and 3D.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto font-mono">
-                        <span class="text-xs text-amber-500">Python</span>
-                        <span class="text-xs text-amber-500">K-Means</span>
-                        <span class="text-xs text-amber-500">Jupyter</span>
-                    </div>
+                    <a href="https://github.com/Aryan22dwivedi/CodeVault" target="_blank" class="w-full text-center bg-zinc-800 hover:bg-amber-500 hover:text-zinc-900 border border-zinc-700 hover:border-amber-500 text-zinc-300 font-mono text-sm py-2 transition-all duration-300">
+                        🔗 GitHub Link
+                    </a>
                 </div>
             </div>
 
+            <!-- Hidden Projects (Toggleable) -->
             <div id="hidden-projects" class="expandable-content mt-6">
-                <div class="expandable-inner grid md:grid-cols-2 gap-6">
-                    <div class="glass-card p-8 flex flex-col h-full group">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold text-zinc-100 group-hover:text-emerald-500 transition-colors">E-Commerce Insights</h4>
-                            <a href="https://github.com/Aryan22dwivedi/E-Commerce-Data-Insights" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="View Source on GitHub">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                            </a>
-                        </div>
+                <div class="expandable-inner grid md:grid-cols-2 gap-6 pt-2">
+                    
+                    <div class="glass-card p-8 flex flex-col h-full">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-4 text-emerald-500 transition-colors">TruJobs AI Platform</h4>
                         <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
-                            Designed interactive dashboards analyzing a 6% jump in user transaction data (Quantity, UnitPrice) during seasonal trends to support business strategy.
+                            Engineered the frontend architecture and dynamic, state-heavy React components for an AI-driven interview platform to evaluate candidate flows.
                         </p>
-                        <div class="flex flex-wrap gap-2 mt-auto font-mono">
-                            <span class="text-xs text-amber-500">Power BI</span>
-                            <span class="text-xs text-amber-500">Data Analytics</span>
+                        <div class="flex flex-wrap gap-2 mb-6 font-mono">
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">React</span>
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">TypeScript</span>
                         </div>
+                        <a href="https://github.com/Aryan22dwivedi" target="_blank" class="w-full text-center bg-zinc-800 hover:bg-amber-500 hover:text-zinc-900 border border-zinc-700 hover:border-amber-500 text-zinc-300 font-mono text-sm py-2 transition-all duration-300">
+                            🔗 GitHub Link
+                        </a>
                     </div>
 
-                    <div class="glass-card p-8 flex flex-col h-full group">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-xl font-bold text-zinc-100 group-hover:text-emerald-500 transition-colors">Sales Forecasting</h4>
-                            <a href="https://github.com/Aryan22dwivedi/sales-forecasting-with-linear-regression" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="View Source on GitHub">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                            </a>
+                    <div class="glass-card p-8 flex flex-col h-full">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-4 text-emerald-500 transition-colors">Customer Segmentation</h4>
+                        <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                            Implemented the Elbow Method for optimal cluster selection; successfully visualized 5 distinct customer demographic clusters in 2D and 3D.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6 font-mono">
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Python</span>
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">K-Means</span>
                         </div>
+                        <a href="https://github.com/Aryan22dwivedi/customer-segmentation-with-k-mean-clustering" target="_blank" class="w-full text-center bg-zinc-800 hover:bg-amber-500 hover:text-zinc-900 border border-zinc-700 hover:border-amber-500 text-zinc-300 font-mono text-sm py-2 transition-all duration-300">
+                            🔗 GitHub Link
+                        </a>
+                    </div>
+
+                    <div class="glass-card p-8 flex flex-col h-full">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-4 text-emerald-500 transition-colors">E-Commerce Insights</h4>
+                        <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                            Designed interactive dashboards analyzing a 6% jump in user transaction data during seasonal trends to support business strategy.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6 font-mono">
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Power BI</span>
+                        </div>
+                        <a href="https://github.com/Aryan22dwivedi/E-Commerce-Data-Insights" target="_blank" class="w-full text-center bg-zinc-800 hover:bg-amber-500 hover:text-zinc-900 border border-zinc-700 hover:border-amber-500 text-zinc-300 font-mono text-sm py-2 transition-all duration-300">
+                            🔗 GitHub Link
+                        </a>
+                    </div>
+
+                    <div class="glass-card p-8 flex flex-col h-full">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-4 text-emerald-500 transition-colors">Sales Forecasting</h4>
                         <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
                             Built a Linear Regression model to predict future sales performance and evaluated accuracy using Matplotlib data visualizations.
                         </p>
-                        <div class="flex flex-wrap gap-2 mt-auto font-mono">
-                            <span class="text-xs text-amber-500">Python</span>
-                            <span class="text-xs text-amber-500">Linear Regression</span>
+                        <div class="flex flex-wrap gap-2 mb-6 font-mono">
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Python</span>
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Linear Reg.</span>
                         </div>
+                        <a href="https://github.com/Aryan22dwivedi/sales-forecasting-with-linear-regression" target="_blank" class="w-full text-center bg-zinc-800 hover:bg-amber-500 hover:text-zinc-900 border border-zinc-700 hover:border-amber-500 text-zinc-300 font-mono text-sm py-2 transition-all duration-300">
+                            🔗 GitHub Link
+                        </a>
                     </div>
+
+                    <div class="glass-card p-8 flex flex-col h-full">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-4 text-emerald-500 transition-colors">Pizza Sales Analysis</h4>
+                        <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                            Executed complex SQL queries to extract KPIs and designed analytical dashboards to evaluate annual sales trends.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6 font-mono">
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">MySQL</span>
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Dashboards</span>
+                        </div>
+                        <a href="https://github.com/Aryan22dwivedi/Pizza_sales_analysis" target="_blank" class="w-full text-center bg-zinc-800 hover:bg-amber-500 hover:text-zinc-900 border border-zinc-700 hover:border-amber-500 text-zinc-300 font-mono text-sm py-2 transition-all duration-300">
+                            🔗 GitHub Link
+                        </a>
+                    </div>
+
+                    <div class="glass-card p-8 flex flex-col h-full">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-4 text-emerald-500 transition-colors">Netflix User Behavior</h4>
+                        <p class="text-zinc-400 mb-6 flex-grow text-sm leading-relaxed">
+                            Visualized watch hours, genre preferences, and user engagement trends for Netflix data using Power BI to derive actionable insights.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6 font-mono">
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Power BI</span>
+                            <span class="text-xs border border-zinc-700 px-2 py-1 text-amber-500">Data Analytics</span>
+                        </div>
+                        <a href="https://github.com/Aryan22dwivedi/netflix-user-behaviour-analysis" target="_blank" class="w-full text-center bg-zinc-800 hover:bg-amber-500 hover:text-zinc-900 border border-zinc-700 hover:border-amber-500 text-zinc-300 font-mono text-sm py-2 transition-all duration-300">
+                            🔗 GitHub Link
+                        </a>
+                    </div>
+
                 </div>
             </div>
             
             <div class="text-center mt-10">
-                <button id="toggle-projects-btn" class="font-mono text-sm border border-zinc-700 bg-zinc-800/30 hover:bg-zinc-700 text-zinc-300 hover:text-white px-6 py-2 transition-all duration-300">
-                    [ Show More Data Projects ]
+                <button id="toggle-projects-btn" class="font-mono text-sm border border-zinc-700 bg-zinc-800/30 hover:bg-zinc-700 text-zinc-300 hover:text-white px-8 py-3 transition-all duration-300 rounded-sm">
+                    View All Projects (6)
                 </button>
             </div>
         </section>
 
+        <!-- Education Section -->
         <section id="education" class="py-20 animate-up">
             <div class="flex items-center mb-12">
                 <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">04.</span> Academic Background</h3>
@@ -308,10 +342,10 @@
                 <div class="relative">
                     <div class="timeline-dot bg-amber-500 shadow-[0_0_10px_#f59e0b]"></div>
                     <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-                        <h4 class="text-xl font-bold text-zinc-100">BCA - Data Science & AI <span class="text-emerald-500">@ Babu Banarasi Das University</span></h4>
+                        <h4 class="text-xl font-bold text-zinc-100">Bachlors of Computer Application - Data Science & AI <span class="text-emerald-500">@ Babu Banarasi Das University</span></h4>
                         <span class="font-mono text-sm text-zinc-500">2023 - 2026</span>
                     </div>
-                    <p class="text-zinc-400 mt-2 text-sm">Lucknow, Uttar Pradesh. Current CGPA: <span class="text-amber-500 font-mono">9.00</span></p>
+                    <p class="text-zinc-400 mt-2 text-sm">Lucknow, Uttar Pradesh. CGPA: <span class="text-amber-500 font-mono">8.74</span></p>
                 </div>
 
                 <div class="relative">
@@ -325,53 +359,37 @@
             </div>
         </section>
 
-        <section id="certifications" class="py-20 animate-up">
-            <div class="flex items-center mb-10">
-                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">05.</span> Certifications</h3>
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 animate-up">
+            <div class="flex items-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-white"><span class="text-amber-500 font-mono mr-2">05.</span> Get In Touch</h3>
                 <div class="h-px bg-zinc-800 flex-grow ml-6"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-sm">
-                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Data Science Foundations - Level 1</div>
-                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Predictive Modeling Fundamentals I</div>
-                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Cognos Analytics Reporting Essentials</div>
-                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Data Visualization</div>
-                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM Data Science 101 & Python 101</div>
-                <div class="glass-card p-4 border-l-2 border-l-emerald-500 text-zinc-300">IBM NoSQL and DBaaS 101</div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-32 animate-up flex flex-col items-center">
-            <h3 class="text-sm font-mono text-amber-500 mb-6">06. Execute Connection</h3>
-            
-            <div class="w-full max-w-2xl bg-[#0d1117] border border-zinc-800 rounded-md overflow-hidden shadow-2xl">
-                <div class="bg-zinc-900 px-4 py-2 flex items-center gap-2 border-b border-zinc-800">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span class="text-xs text-zinc-500 font-mono ml-2">guest@akd-portfolio:~</span>
-                </div>
+            <div class="glass-card p-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Let's Build Something.</h2>
+                <p class="text-zinc-400 mb-10 text-lg leading-relaxed">
+                    I am actively open to new opportunities in Data Engineering, Full-Stack development, and AI integrations. Whether you have a question or just want to say hi, my inbox is always open.
+                </p>
                 
-                <div class="p-6 font-mono text-sm md:text-base text-zinc-300 leading-relaxed">
-                    <p class="mb-2"><span class="text-emerald-500">guest@akd-portfolio</span><span class="text-white">:</span><span class="text-blue-400">~</span>$ ping -c 1 aryan_dwivedi</p>
-                    <p class="text-zinc-500 mb-4">PING aryan_dwivedi (Available for Hire): 56 data bytes</p>
-                    
-                    <p class="mb-4">I am actively open to new opportunities in Data Engineering, AI integrations, and Full-Stack development. Let's build something.</p>
-                    
-                    <p class="mb-6"><span class="text-emerald-500">guest@akd-portfolio</span><span class="text-white">:</span><span class="text-blue-400">~</span>$ ./initiate_contact.sh</p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                        <a href="mailto:aryandwivedi221220@gmail.com" class="text-center bg-emerald-500/10 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-[#0d1117] px-6 py-2 transition-all duration-300">
-                            > Send_Email()
-                        </a>
-                        <a href="https://www.linkedin.com/in/aryan-dwivedi-390056335" target="_blank" class="text-center bg-blue-500/10 border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-[#0d1117] px-6 py-2 transition-all duration-300">
-                            > LinkedIn_Connect()
-                        </a>
-                    </div>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="mailto:aryandwivedi221220@gmail.com" class="flex items-center justify-center gap-2 bg-amber-500 text-zinc-950 font-bold text-lg px-8 py-4 rounded-sm hover:bg-amber-400 transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Email Me directly
+                    </a>
+                    <a href="https://www.linkedin.com/in/aryan-dwivedi-390056335" target="_blank" class="flex items-center justify-center gap-2 bg-[#0A66C2] text-white font-bold text-lg px-8 py-4 rounded-sm hover:bg-[#004182] transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        Connect on LinkedIn
+                    </a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 py-8 text-center text-zinc-500 font-mono text-sm">
+        <p>Built by Aryan Kumar Dwivedi.</p>
+    </footer>
 
     <script>
         // Mobile menu toggle
@@ -389,10 +407,10 @@
         toggleBtn.addEventListener('click', () => {
             hiddenProjects.classList.toggle('expanded');
             if (hiddenProjects.classList.contains('expanded')) {
-                toggleBtn.innerText = '[ Collapse Projects ]';
+                toggleBtn.innerText = 'Hide Projects';
                 toggleBtn.classList.add('text-amber-500', 'border-amber-500');
             } else {
-                toggleBtn.innerText = '[ Show More Data Projects ]';
+                toggleBtn.innerText = 'View All Projects (6)';
                 toggleBtn.classList.remove('text-amber-500', 'border-amber-500');
             }
         });
